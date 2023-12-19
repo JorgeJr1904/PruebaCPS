@@ -1,0 +1,42 @@
+<section class="form">
+    <div class="container mt-5">
+        <h1>Cotizador de Envios</h1>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+
+                <label for="originCountry">Pais de Origen:</label>
+                <select class="form-control" id="originCountry" name="originCountry" [(ngModel)]=originCountry>
+                    <optgroup *ngFor="let originRegion of countriesByRegion" [label]="originRegion.region">
+                        <option *ngFor="let country of originRegion.countries" [value]="originRegion.id">{{ country }}</option>
+                    </optgroup>
+                </select>
+
+                <label for="arriveCountry">Pais de Destino:</label>
+                <select class="form-control" id="arriveCountry" name="arriveCountry" [(ngModel)]=arriveCountry>
+                    <optgroup *ngFor="let arriveRegion of countriesByRegion" [label]="arriveRegion.region">
+                        <option *ngFor="let country of arriveRegion.countries" [value]="arriveRegion.id">{{ country }}</option>
+                    </optgroup>
+                </select>
+
+                <label for="pWeight">Peso del Paquete (lbs)</label>
+                <input [(ngModel)]="package.weight" class="form-control" type="number" id="pWeight" name="pWeight">
+
+                <label for="pWidth">Ancho del Paquete (cm)</label>
+                <input [(ngModel)]="package.width" class="form-control" type="number" id="pWidth" name="pWidth">
+
+                <label for="pHeight">Alto del Paquete (cm)</label>
+                <input [(ngModel)]="package.height" class="form-control" type="number" id="pHeight" name="pHeight">
+
+                <label for="pLarge">Largo del Paquete (cm)</label>
+                <input [(ngModel)]="package.large" class="form-control" type="number" name="pLarge" id="pLarge">
+
+                <button class="btn btn-primary" type="submit" name="fee">Cotizar</button>
+            </div>
+        </form>
+    </div>  
+    
+    <div class="total">
+        <p>Costo de Envio</p>
+        <p>{{total}}</p>
+    </div>
+</section>

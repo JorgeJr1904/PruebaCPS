@@ -1,0 +1,17 @@
+.navbar-brand img{
+    width: 75px;
+}
+
+.login{
+    margin-left: 1px;
+}
+
+#navbarNav ul{
+    width: 100%;
+}
+
+.logOut{
+    width: 75%;
+    display: flex;
+    justify-content: end;
+}

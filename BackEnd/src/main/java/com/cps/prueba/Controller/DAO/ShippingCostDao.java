@@ -51,6 +51,7 @@ public class ShippingCostDao {
 
             return compra.subtract(discount(compra, discount)).multiply(BigDecimal.valueOf(pack.getWeight()).multiply(BigDecimal.valueOf(0.5)));
         }catch (Exception e){
+            e.printStackTrace();
             return null;
 
         }

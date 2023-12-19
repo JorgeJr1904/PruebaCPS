@@ -1,0 +1,17 @@
+#pLarge{
+    margin-bottom: 15px;
+}
+
+button{
+    margin-bottom: 20px;
+}
+
+.total{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid orange 2px;
+    font-size: 24px;
+    text-align: center;
+    margin: 0 40% 40% 40%;
+}
